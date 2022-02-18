@@ -1,0 +1,5 @@
+The Nats Jetstream server along with a nfs server has been deployed.
+
+nats url    : nats.{{ .Values.namespace }}.svc.cluster.local
+
+nfs url     : nfs-server.{{ .Values.namespace }}.svc.cluster.local
