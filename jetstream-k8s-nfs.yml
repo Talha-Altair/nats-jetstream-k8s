@@ -73,9 +73,9 @@ spec:
             name: nats-config
         - name: pid
           emptyDir: {}
-        - name: nats-filestore
+        - name: nats-storage
           persistentVolumeClaim:
-            claimName: fileserver-claim-jetstream
+            claimName: fileserver-claim-jetstream-pvc
             readOnly: false
 
       # Required to be able to HUP signal and apply config reload
@@ -135,7 +135,7 @@ spec:
               mountPath: /etc/nats-config
             - name: pid
               mountPath: /var/run/nats
-            - name: nats-filestore
+            - name: nats-storage
               mountPath: /nats-storage
 
           # Liveness/Readiness probes against the monitoring
@@ -177,7 +177,7 @@ spec:
   accessModes:
     - ReadWriteMany
   storageClassName: standard
-  volumeName: fileserver-jetstream
+  volumeName: fileserver-jetstream-pv
   resources:
     requests:
       storage: 25Gi
