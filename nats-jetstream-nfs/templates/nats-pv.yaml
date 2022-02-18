@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: fileserver-jetstream-pv
+spec:
+  capacity:
+    storage: {{ .Values.storage.nats_pv }}
+  accessModes:
+    - ReadWriteMany
+  storageClassName: standard
+  nfs:
+    path: /
+    server: nfs-server.{{ .Values.namespace }}.svc.cluster.local # IP address Filestore instance

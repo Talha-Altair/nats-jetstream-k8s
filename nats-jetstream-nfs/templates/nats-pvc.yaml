@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fileserver-claim-jetstream-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: standard
+  volumeName: fileserver-jetstream-pv
+  resources:
+    requests:
+      storage: {{ .Values.storage.nats_pvc }}

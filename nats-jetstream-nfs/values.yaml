@@ -1,0 +1,6 @@
+storage:
+  base_pvc: 30Gi
+  nats_pv: 27Gi
+  nats_pvc: 25Gi
+
+namespace: nats
