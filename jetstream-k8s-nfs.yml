@@ -172,7 +172,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: fileserver-claim-jetstream
+  name: fileserver-claim-jetstream-pvc
 spec:
   accessModes:
     - ReadWriteMany
@@ -185,7 +185,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: fileserver-jetstream
+  name: fileserver-jetstream-pv
 spec:
   capacity:
     storage: 27Gi
